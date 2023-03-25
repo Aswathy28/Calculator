@@ -1,0 +1,109 @@
+# Calculator
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+h1{
+    text-align: center;
+}
+.container{
+    width: 300px;
+    height: 400px;
+    background-color: rgb(49, 44, 44);
+    margin: auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+#screen{
+    background-color: rgb(197, 243, 243);
+    width: 290px;
+    height: 60px;
+    font-size: 45px;
+    text-align: right;
+}
+.btn{
+    width: 70px;
+    height: 48px;
+    font-size: 25px;
+}
+.clear{
+    width: 70px;
+    height: 48px;
+    font-size: 25px;
+    background-color: rgb(23, 146, 89);
+    border: none;
+    
+}
+.equal{
+    width: 289px;
+    height: 48px;
+    font-size: 25px;
+    background-color: orangered;
+    border: none;
+}
+.btn:hover{
+    border: 2px solid grey;
+}
+.clear:hover{
+    border: 2px solid green;
+}
+.equal:hover{
+    border: 2px solid orange;
+}
+<body>
+    <h1>CALCULATOR</h1>
+    <div class="container">
+            <div class="scrn">
+            <input type="text" id="screen"> <br> <br>
+            </div>
+                <input class="btn" type="button" value="1" onclick="action('1')">
+                <input class="btn" type="button" value="2" onclick="action('2')">
+                <input class="btn" type="button" value="3" onclick="action('3')">
+                <input class="btn" type="button" value="+" onclick="action('+')">
+                <br> <br>
+                <input class="btn" type="button" value="4" onclick="action('4')">
+                <input class="btn" type="button" value="5" onclick="action('5')">
+                <input class="btn" type="button" value="6" onclick="action('6')">
+                <input class="btn" type="button" value="-" onclick="action('-')">
+                <br><br>
+                <input class="btn" type="button" value="7" onclick="action('7')">
+                <input class="btn" type="button" value="8" onclick="action('8')">
+                <input class="btn" type="button" value="9" onclick="action('9')">
+                <input class="btn" type="button" value="*" onclick="action('*')">
+                <br><br>
+                <input class="btn" type="button" value="." onclick="action('.')">
+                <input class="btn" type="button" value="0" onclick="action('0')">
+                <input class="clear" type="button" value="C" onclick="clearDisplay()">
+                <input class="btn" type="button" value="/" onclick="action('/')">
+                <br><br>
+                <input class="equal" type="button" value="=" onclick="equal('=')">
+    </div>
+
+    <script>
+            // var screen=document.getElementById('screen');
+
+                  function action(val)
+                  {
+                      document.getElementById('screen').value+=val;
+                  }
+                  function clearDisplay()
+                  {
+                      document.getElementById('screen').value='';
+                  }
+                  function equal()
+                  {
+                      var a=document.getElementById('screen').value;
+                      var b=eval(a);
+                      document.getElementById('screen').value=b;
+                  }
+
+   </script>
+</body>
+</html>
+
